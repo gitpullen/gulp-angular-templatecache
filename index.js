@@ -43,7 +43,7 @@ module.exports = function(filename, options) {
     filename = options.filename || 'templates.js';
   }
 
-  var templateHeader = 'angular.module("<%= module %>"<%= standalone %>).run(["$templateCache", function($templateCache) {';
+  var templateHeader = 'module.exports = angular.module("<%= module %>"<%= standalone %>).run(["$templateCache", function($templateCache) {';
   var templateFooter = '}]);';
 
   return es.pipeline(
